@@ -18,6 +18,9 @@ class GlobalController extends GetxController {
   final weatherData = WeatherData().obs;
 
   WeatherData getData() {
+    Future.delayed(const Duration(seconds: 1), (){
+      getLocation();
+    });
     return weatherData.value;
   }
 
